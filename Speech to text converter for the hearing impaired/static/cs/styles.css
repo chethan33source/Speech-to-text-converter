@@ -1,0 +1,106 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Use a clean and professional font */
+    line-height: 1.6; /* Improve readability */
+    color: #333; /* Set a dark grey text color */
+    background-color: #f4f4f4; /* Light grey background for contrast */
+    padding: 10px; /* Add some padding around the body */
+}
+
+/* Header styles */
+header {
+    background: #3ebae0; /* Bootstrap primary color */
+    color: #ffffff; /* White text color */
+    padding: 10px 0; /* Add vertical padding */
+}
+
+.navbar {
+    max-width: 1200px; /* Set a maximum width for the navbar */
+    margin: 0 auto; /* Center the navbar */
+}
+
+.navbar ul {
+    list-style-type: none; /* Remove bullet points */
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-around; /* Space out the links evenly */
+}
+
+.navbar a {
+    color: white; /* White text for links */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 15px; /* Add padding for clickable area */
+    transition: background 0.3s; /* Smooth transition for hover effects */
+}
+
+.navbar a:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Main content styles */
+.container {
+    max-width: 800px; /* Limit the width of the main content */
+    margin: 20px auto; /* Center the main content */
+    padding: 20px; /* Add padding inside the container */
+    background: white; /* White background for content area */
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Headings */
+h1 {
+    color: #007bff; /* Primary color for main heading */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+h2 {
+    color: #333; /* Dark grey for subheadings */
+    margin-top: 20px; /* Space above the subheading */
+}
+
+/* Feature section styles */
+.features {
+    display: grid; /* Use grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 15px; /* Space between grid items */
+    margin-top: 20px; /* Space above the features section */
+}
+
+.feature {
+    background: #e9ecef; /* Light grey background for feature boxes */
+    padding: 15px; /* Padding inside feature boxes */
+    border-radius: 5px; /* Slightly rounded corners */
+    text-align: center; /* Center text inside feature boxes */
+}
+
+/* Status message styles */
+.status {
+    margin-top: 20px; /* Space above status message */
+    font-style: italic; /* Italic style for emphasis */
+}
+
+/* Footer styles */
+footer {
+    text-align: center; /* Center text in the footer */
+    margin-top: 20px; /* Space above the footer */
+    padding: 10px 0; /* Vertical padding */
+    background: hsl(205, 74%, 58%); /* Same color as header */
+    color: white; /* White text color */
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    .navbar ul {
+        flex-direction: column; /* Stack links vertically on small screens */
+        align-items: center; /* Center align items */
+    }
+
+    .container {
+        padding: 15px; /* Less padding on smaller screens */
+    }
+}

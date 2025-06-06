@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Conversion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="english.html">English Conversion</a></li>
+                <li><a href="hindi.html">Hindi Conversion</a></li>
+                <li><a href="kannada.html">Kannada Conversion</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>English Speech-to-Text Conversion</h1>
+        <p>Use this page to transcribe your speech to English text.</p>
+
+        <div class="form-group">
+            <label for="transcribedText">✍️ Transcribed Text:</label>
+            <textarea id="transcribedText" rows="10" cols="100" readonly></textarea>
+        </div>
+
+        <div class="button-group">
+            <button class="button-start" onclick="startRecording()">🎤 Start Recording</button>
+            <button class="button-stop" onclick="stopRecording()">⏹️ Stop Recording</button>
+        </div>
+
+        <p class="status" id="status">💡 Click 'Start Recording' to begin.</p>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Speech-to-Text Application. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let recognition;
+        let isRecording = false;
+
+        function startRecording() {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert('Speech Recognition is not supported in your browser. Please use Google Chrome.');
+                return;
+            }
+
+            recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.onstart = () => {
+                isRecording = true;
+                document.getElementById('status').textContent = 'Listening...';
+            };
+
+            recognition.onresult = (event) => {
+                const result = event.results[0][0].transcript;
+                document.getElementById('transcribedText').value = result;
+            };
+
+            recognition.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                document.getElementById('status').textContent = 'Error occurred. Try again.';
+            };
+
+            recognition.onend = () => {
+                isRecording = false;
+                document.getElementById('status').textContent = 'Click "Start Recording" to begin.';
+            };
+
+            recognition.start();
+        }
+
+        function stopRecording() {
+            if (isRecording && recognition) {
+                recognition.stop();
+            }
+        }
+    </script>
+</body>
+</html>
