@@ -4,14 +4,14 @@ A modern, premium speech-to-text application powered by OpenAI's Whisper AI mode
 
 ## Features
 
-- 🎤 Real-time audio recording
-- 🤖 Powered by OpenAI Whisper AI
-- ✨ Premium, responsive UI with animations
-- 📱 Mobile-friendly design
-- 📋 Copy transcript to clipboard
-- 🗑️ Clear transcript functionality
-- ⚡ Fast transcription with loading states
-- 🔒 Secure file handling with automatic cleanup
+- Real-time audio recording
+- Powered by OpenAI Whisper AI
+- Premium, responsive UI with animations
+- Mobile-friendly design
+- Copy transcript to clipboard
+- Clear transcript functionality
+- Fast transcription with loading states
+- Secure file handling with automatic cleanup
 
 ## Tech Stack
 
